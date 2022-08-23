@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8724657017535808427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8724657017535808426}
+  - component: {fileID: 8724657017535808425}
+  m_Layer: 0
+  m_Name: AudioEventList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8724657017535808426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8724657017535808427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8724657017535808425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8724657017535808427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d031324af21fa849babd810d996c7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEvents:
+  - eventName: ButtonClick
+    eventPath:
+      Guid:
+        Data1: -782512979
+        Data2: 1151545431
+        Data3: 1412005264
+        Data4: 929253117
+      Path: event:/Button/Button_Click
+  - eventName: ButtonHover
+    eventPath:
+      Guid:
+        Data1: 161765379
+        Data2: 1233052864
+        Data3: -375136
+        Data4: -1989497421
+      Path: event:/Button/Button_Hover
+  - eventName: PotCooking
+    eventPath:
+      Guid:
+        Data1: -1814945897
+        Data2: 1093654677
+        Data3: 643004581
+        Data4: 187077734
+      Path: event:/Pot/Pot_Cooking
+  - eventName: BuyOffer
+    eventPath:
+      Guid:
+        Data1: -1965826970
+        Data2: 1109528686
+        Data3: 1798007696
+        Data4: -1038951732
+      Path: event:/Shop/Buy_Click
+  - eventName: OpenBook
+    eventPath:
+      Guid:
+        Data1: 1261252849
+        Data2: 1153475942
+        Data3: -1941881174
+        Data4: -537951075
+      Path: event:/Book/Open_Book
+  - eventName: CloseBook
+    eventPath:
+      Guid:
+        Data1: 1554653435
+        Data2: 1194322126
+        Data3: -406679385
+        Data4: -315375722
+      Path: event:/Book/Close_Book
+  - eventName: ChangePage
+    eventPath:
+      Guid:
+        Data1: 903392606
+        Data2: 1202504755
+        Data3: -2145692247
+        Data4: -130181880
+      Path: event:/Book/Page_Turn
+  - eventName: CustomerNotification
+    eventPath:
+      Guid:
+        Data1: 2125016244
+        Data2: 1239939695
+        Data3: 886258858
+        Data4: 1751486746
+      Path: event:/CustomerNotification
+  - eventName: MerchantNotification
+    eventPath:
+      Guid:
+        Data1: 394778084
+        Data2: 1201965901
+        Data3: 1885489052
+        Data4: 437314927
+      Path: event:/MerchantNotification
+  - eventName: PotionBrewed
+    eventPath:
+      Guid:
+        Data1: 263646755
+        Data2: 1224669522
+        Data3: -1881222760
+        Data4: 635415843
+      Path: event:/Pot/PotionBrewed
+  - eventName: PotionAddEffect
+    eventPath:
+      Guid:
+        Data1: -1176859462
+        Data2: 1277422826
+        Data3: -1668284534
+        Data4: -1233871443
+      Path: event:/Pot/PotionAddEffect
+  - eventName: AddIngredient
+    eventPath:
+      Guid:
+        Data1: 2029966189
+        Data2: 1322966944
+        Data3: -1313041478
+        Data4: -1628250211
+      Path: event:/Pot/AddIngredient

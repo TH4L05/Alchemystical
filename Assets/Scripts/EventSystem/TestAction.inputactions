@@ -1,0 +1,254 @@
+{
+    "name": "TestAction",
+    "maps": [
+        {
+            "name": "Event",
+            "id": "0ff3f0c2-5c18-47f3-b7b1-3b28683b58d4",
+            "actions": [
+                {
+                    "name": "ButtonOne",
+                    "type": "Button",
+                    "id": "c39c4f65-b073-435a-8c3f-94987625a0b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonTwo",
+                    "type": "Button",
+                    "id": "d335f0fd-dbf3-481d-899c-158822b61790",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonThree",
+                    "type": "Button",
+                    "id": "f939feec-ddc2-40d3-a55a-2cc8bc34f64d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonFour",
+                    "type": "Button",
+                    "id": "cf9b0037-6aa1-46cc-bb9d-38451c47b59d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonFive",
+                    "type": "Button",
+                    "id": "bd7c6fad-1c7a-4ce8-981b-b8401f94b02a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonSix",
+                    "type": "Button",
+                    "id": "7c76879e-f8ab-4a04-b6a0-8631039b55a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FireButton",
+                    "type": "Button",
+                    "id": "00060b39-cea2-4e5c-9eab-e9af57189aa0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HotValue",
+                    "type": "Value",
+                    "id": "642f700c-589b-4f81-90cd-4a58267e62fc",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ColdValue",
+                    "type": "Value",
+                    "id": "74d44a95-07b1-4245-8420-2b1a89ac9afb",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Temperatur",
+                    "type": "Value",
+                    "id": "79506b0c-8b4e-4dab-a6df-da9f2cd12256",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LookLeft",
+                    "type": "Button",
+                    "id": "ca7c4d43-52c6-49ec-a801-613fa787dd7f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LookRight",
+                    "type": "Button",
+                    "id": "0bf7fb3c-03ea-44a1-95bb-58d7be2bee28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "35ce7981-abf2-459d-bf90-2177a98e1573",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button8",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonOne",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d28abc18-2f99-4e4e-991e-be72cb9129fd",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonTwo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ae6ed2a-fe0e-485d-8388-6c418b0c59de",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonThree",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21578599-d899-4c36-abfa-73d7e1965aa4",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonFour",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e0cf638-5844-47f8-b6ba-0086d7cdca55",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab97cfd1-4527-4446-9eed-9d83c16d015f",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button6",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HotValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d89dc6d9-42b3-4e1c-b2db-2a45ffdcc737",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/button4",
+                    "interactions": "Hold(duration=0.4,pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColdValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5beb21ea-9ec8-44d3-ac67-633671e71f05",
+                    "path": "<HID::SHANWAN PS3/PC Gamepad>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Temperatur",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15f1c30f-2e6e-440a-b3d9-90e78c4341c2",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25e66eaa-7129-4b87-8641-b53520af1df9",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23e45f06-19f1-4284-a94e-ca7c9b276829",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonFive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0c71582-bd1a-4deb-bf4b-096163b77347",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonSix",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

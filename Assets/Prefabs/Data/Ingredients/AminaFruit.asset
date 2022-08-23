@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300a31bbfdf4ce54f9aca278e8088dbf, type: 3}
+  m_Name: AminaFruit
+  m_EditorClassIdentifier: 
+  ingredientName: Amina Fruit
+  icon: {fileID: 21300000, guid: 0dea6d7200ffb8045a6ca1154ec1866e, type: 3}
+  shopPrice: 7
+  brewColor: {r: 0.109803915, g: 0.54883695, b: 0.9254902, a: 0.5882353}
+  clockwiseEffect: 1
+  counterClockwiseEffect: 17
+  cwEffectUnlocked: 0
+  ccwEffectUnlocked: 0

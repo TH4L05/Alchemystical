@@ -1,0 +1,457 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7531592299943398151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../Alchemistical2.0FMOD/Alchemystical2.0/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637962862939175174
+  FileSizes:
+  - Name: Desktop
+    Value: 9011776
+  Exists: 1
+--- !u!114 &-6543414694114643289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pot/AddIngredient
+  m_EditorClassIdentifier: 
+  Path: event:/Pot/AddIngredient
+  Guid:
+    Data1: 2029966189
+    Data2: 1322966944
+    Data3: -1313041478
+    Data4: -1628250211
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5974961603055800871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pot/PotionBrewed
+  m_EditorClassIdentifier: 
+  Path: event:/Pot/PotionBrewed
+  Guid:
+    Data1: 263646755
+    Data2: 1224669522
+    Data3: -1881222760
+    Data4: 635415843
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5715742216393894791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Shop/Buy_Click
+  m_EditorClassIdentifier: 
+  Path: event:/Shop/Buy_Click
+  Guid:
+    Data1: -1965826970
+    Data2: 1109528686
+    Data3: 1798007696
+    Data4: -1038951732
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4783813382970539528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MerchantNotification
+  m_EditorClassIdentifier: 
+  Path: event:/MerchantNotification
+  Guid:
+    Data1: 394778084
+    Data2: 1201965901
+    Data3: 1885489052
+    Data4: 437314927
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3883861210662889501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Button/Button_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/Button/Button_Hover
+  Guid:
+    Data1: 161765379
+    Data2: 1233052864
+    Data3: -375136
+    Data4: -1989497421
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1634173293649178459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Book/Open_Book
+  m_EditorClassIdentifier: 
+  Path: event:/Book/Open_Book
+  Guid:
+    Data1: 1261252849
+    Data2: 1153475942
+    Data3: -1941881174
+    Data4: -537951075
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 7575623124049665611}
+  - {fileID: -7531592299943398151}
+  EditorEvents:
+  - {fileID: -3883861210662889501}
+  - {fileID: 9010638145440042966}
+  - {fileID: 1655510512283501802}
+  - {fileID: 8161524797671729294}
+  - {fileID: -5715742216393894791}
+  - {fileID: 5134735204702017946}
+  - {fileID: -1634173293649178459}
+  - {fileID: 3031240390661110912}
+  - {fileID: 5343154667738520983}
+  - {fileID: 1100544329812785334}
+  - {fileID: -4783813382970539528}
+  - {fileID: -5974961603055800871}
+  - {fileID: -6543414694114643289}
+  - {fileID: 3668249250534002104}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7531592299943398151}
+  StringsBanks:
+  - {fileID: 7575623124049665611}
+  cacheTime: 637962862939215165
+  cacheVersion: 131591
+--- !u!114 &1100544329812785334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pot/Pot_Cooking
+  m_EditorClassIdentifier: 
+  Path: event:/Pot/Pot_Cooking
+  Guid:
+    Data1: -1814945897
+    Data2: 1093654677
+    Data3: 643004581
+    Data4: 187077734
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19045
+--- !u!114 &1655510512283501802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG Music/BG_Music_MM
+  m_EditorClassIdentifier: 
+  Path: event:/BG Music/BG_Music_MM
+  Guid:
+    Data1: -904737702
+    Data2: 1095550692
+    Data3: 714646439
+    Data4: -172896432
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 185708
+--- !u!114 &3031240390661110912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Book/Close_Book
+  m_EditorClassIdentifier: 
+  Path: event:/Book/Close_Book
+  Guid:
+    Data1: 1554653435
+    Data2: 1194322126
+    Data3: -406679385
+    Data4: -315375722
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3668249250534002104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pot/PotionAddEffect
+  m_EditorClassIdentifier: 
+  Path: event:/Pot/PotionAddEffect
+  Guid:
+    Data1: -1176859462
+    Data2: 1277422826
+    Data3: -1668284534
+    Data4: -1233871443
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5134735204702017946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Button/Button_Click
+  m_EditorClassIdentifier: 
+  Path: event:/Button/Button_Click
+  Guid:
+    Data1: -782512979
+    Data2: 1151545431
+    Data3: 1412005264
+    Data4: 929253117
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5343154667738520983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CustomerNotification
+  m_EditorClassIdentifier: 
+  Path: event:/CustomerNotification
+  Guid:
+    Data1: 2125016244
+    Data2: 1239939695
+    Data3: 886258858
+    Data4: 1751486746
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7575623124049665611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../Alchemistical2.0FMOD/Alchemystical2.0/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637962862939215165
+  FileSizes:
+  - Name: Desktop
+    Value: 1498
+  Exists: 1
+--- !u!114 &8161524797671729294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Book/Page_Turn
+  m_EditorClassIdentifier: 
+  Path: event:/Book/Page_Turn
+  Guid:
+    Data1: 903392606
+    Data2: 1202504755
+    Data3: -2145692247
+    Data4: -130181880
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9010638145440042966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG Music/BG_Music_Game
+  m_EditorClassIdentifier: 
+  Path: event:/BG Music/BG_Music_Game
+  Guid:
+    Data1: 27759701
+    Data2: 1307639440
+    Data3: -18463830
+    Data4: 2028294801
+  Banks:
+  - {fileID: -7531592299943398151}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 457874
