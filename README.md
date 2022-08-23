@@ -7,7 +7,7 @@
 <h2 align="center">Engine / Language:</h2> 
 <p align="center">Unity (URP) / C# </p>
 <p align="center"><img src=/Readme/line2.png></p>
-<h2 align="center">Responsebilities:</h2> 
+<h2 align="center">Responsiblities:</h2> 
 <p align="center">Programming</p>
 <p align="center">Design</p>
 <p align="center">UI</p>
