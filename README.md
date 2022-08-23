@@ -1,7 +1,7 @@
 <h1 align="center">Alchemystical</h1>
 <h3 align="center">S4G Internship Project 2</h3>
 <p align="center">(developed  for speedlink PHANTOM HAWK Flightstick)</p>
-<p align="center"><i>https://s4g.itch.io/hooked</i></p>
+<!-- <p align="center"><i>https://s4g.itch.io/alchemystical</i></p> -->
 
 
 <p align="center"><img src=/Readme/line2.png></p>
