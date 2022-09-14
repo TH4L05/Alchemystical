@@ -1,3 +1,4 @@
+using System.Collections;
 using TK.Audio;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,7 +23,6 @@ namespace Alchemystical
         private int currentPageIndex = 0;
         private bool showBook = false;
 
-
         private void Start()
         {
             potions = Game.Instance.gameData.potions;
@@ -32,6 +32,12 @@ namespace Alchemystical
 
         private void OnEnable()
         {
+            //StartCoroutine(StartSetup());
+        }
+
+        IEnumerator StartSetup()
+        {
+            yield return new WaitForSeconds(1.0f);
             ShowPages(currentPageIndex);
         }
 

@@ -83,6 +83,14 @@ namespace Alchemystical
             {
                 JoystickChanged(true, 0, null, InputDeviceChange.HardReset);
                 Debug.Log("A Speedlink PhantomHawk Joystick is Connected");
+
+                Debug.Log(Joystick.current.deviceId);
+                Debug.Log(Joystick.current.displayName);
+                Debug.Log(Joystick.current.device);
+                Debug.Log(Joystick.current.description);
+                Debug.Log(Joystick.current.description.product);
+                Debug.Log(Joystick.current.description.interfaceName);
+                Debug.Log(Joystick.current.description.serial);
             }
             //else if (Joystick.current.description.product == "Generic   USB  Joystick  ")
             else
@@ -107,6 +115,11 @@ namespace Alchemystical
         private void OnDeviceChange(InputDevice inputDevice, InputDeviceChange inputDeviceChange)
         {
             if (destroy) return;
+            if (inputDevice.device.deviceId == Mouse.current.deviceId || inputDevice.device.deviceId == Keyboard.current.deviceId)
+            {
+                Debug.Log("Keyboard/Mouse");
+                return;
+            }
 
             switch (inputDeviceChange)
             {
@@ -119,6 +132,9 @@ namespace Alchemystical
                     //else if (inputDevice.description.product == "Generic   USB  Joystick  ")
                     else
                     {
+                        if (inputDevice.device.deviceId == Mouse.current.deviceId) return;
+                        if (inputDevice.device.deviceId == Keyboard.current.deviceId) return;
+
                         UnsupprotedJostickVersionActive?.Invoke();
                         JoystickChanged(false, -1, null, InputDeviceChange.UsageChanged);
                         //Debug.Log("Another Version of Speedlink PhantomHawk Joystick is Connected");
@@ -159,6 +175,9 @@ namespace Alchemystical
                     //else if (inputDevice.description.product == "Generic   USB  Joystick  ")
                     else
                     {
+                        if (inputDevice.device.deviceId == Mouse.current.deviceId) return;
+                        if (inputDevice.device.deviceId == Keyboard.current.deviceId) return;
+
                         UnsupprotedJostickVersionActive?.Invoke();
                         JoystickChanged(false, -1, null, InputDeviceChange.UsageChanged);
                         //Debug.Log("Another Version of Speedlink PhantomHawk Joystick is Connected");
@@ -168,6 +187,13 @@ namespace Alchemystical
 
                 case InputDeviceChange.Enabled:
 
+                    Debug.Log(inputDevice.device);
+                    Debug.Log(inputDevice.deviceId);
+                    Debug.Log(inputDevice.displayName);
+                    Debug.Log(inputDevice.description);
+                    Debug.Log(inputDevice.description.product);
+                    Debug.Log(inputDevice.description.serial);
+
                     if (inputDevice.description.product == "PS3/PC Gamepad")
                     {
                         JoystickChanged(true, 0, inputDevice, inputDeviceChange);
@@ -175,6 +201,9 @@ namespace Alchemystical
                     //else if (inputDevice.description.product == "Generic   USB  Joystick  ")
                     else
                     {
+                        if (inputDevice.device.deviceId == Mouse.current.deviceId) return;
+                        if (inputDevice.device.deviceId == Keyboard.current.deviceId) return;
+
                         UnsupprotedJostickVersionActive?.Invoke();
                         JoystickChanged(false, -1, null, InputDeviceChange.UsageChanged);
                         //Debug.Log("Another Version of Speedlink PhantomHawk Joystick is Connected");
@@ -184,14 +213,14 @@ namespace Alchemystical
 
                 case InputDeviceChange.Disabled:
 
-                    if (inputDevice.description.product == "PS3/PC Gamepad")
+                    /*if (inputDevice.description.product == "PS3/PC Gamepad")
                     {
                         JoystickChanged(false, -1, inputDevice, inputDeviceChange);
 
                     }
                     //else if (inputDevice.description.product == "Generic   USB  Joystick  ")
                     //{
-                    //}
+                    //}*/
                     break;
 
                 case InputDeviceChange.UsageChanged:

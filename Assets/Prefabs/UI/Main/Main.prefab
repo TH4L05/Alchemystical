@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 314570414874053291}
   defaultSelectedButton: {fileID: 314570414874053291}
   buttons:
@@ -503,6 +504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3448636022400447980}
     m_Modifications:
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 5
@@ -764,6 +769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3448636022400447980}
     m_Modifications:
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1101,6 +1110,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3448636022400447980}
     m_Modifications:
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1447,6 +1460,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 3448636022400447980}
     m_Modifications:
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 757367124}
@@ -1454,6 +1475,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 136100558726630166}
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayAudioEventOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TK.Audio.AudioEventList, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 7373435034596454384, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1541,6 +1574,12 @@ PrefabInstance:
     - target: {fileID: 7373435034596454385, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_Name
       value: Start Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373435035827261817, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
+      propertyPath: m_text
+      value: 'Start
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}

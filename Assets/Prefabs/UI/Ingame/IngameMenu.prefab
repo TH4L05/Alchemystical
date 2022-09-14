@@ -261,8 +261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3726369328077279230}
   - component: {fileID: 3726369328077279231}
-  - component: {fileID: 5490804057371653853}
-  - component: {fileID: 930914334456753645}
   m_Layer: 5
   m_Name: IngameMenu
   m_TagString: Untagged
@@ -314,96 +312,6 @@ MonoBehaviour:
   setTimeScaleZero: 1
   showPauseMenu: {fileID: 0}
   hidePauseMenu: {fileID: 0}
---- !u!114 &5490804057371653853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3726369328077279228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031324af21fa849babd810d996c7ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioEvents:
-  - eventName: ButtonClick
-    eventPath:
-      Guid:
-        Data1: -782512979
-        Data2: 1151545431
-        Data3: 1412005264
-        Data4: 929253117
-      Path: event:/Button/Button_Click
-  - eventName: ButtonHover
-    eventPath:
-      Guid:
-        Data1: 161765379
-        Data2: 1233052864
-        Data3: -375136
-        Data4: -1989497421
-      Path: event:/Button/Button_Hover
-  - eventName: PotCooking
-    eventPath:
-      Guid:
-        Data1: -1814945897
-        Data2: 1093654677
-        Data3: 643004581
-        Data4: 187077734
-      Path: event:/Pot/Pot_Cooking
-  - eventName: BuyOffer
-    eventPath:
-      Guid:
-        Data1: -1965826970
-        Data2: 1109528686
-        Data3: 1798007696
-        Data4: -1038951732
-      Path: event:/Shop/Buy_Click
-  - eventName: OpenBook
-    eventPath:
-      Guid:
-        Data1: 1261252849
-        Data2: 1153475942
-        Data3: -1941881174
-        Data4: -537951075
-      Path: event:/Book/Open_Book
-  - eventName: CloseBook
-    eventPath:
-      Guid:
-        Data1: 1554653435
-        Data2: 1194322126
-        Data3: -406679385
-        Data4: -315375722
-      Path: event:/Book/Close_Book
-  - eventName: ChangePage
-    eventPath:
-      Guid:
-        Data1: 903392606
-        Data2: 1202504755
-        Data3: -2145692247
-        Data4: -130181880
-      Path: event:/Book/Page_Turn
---- !u!114 &930914334456753645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3726369328077279228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f57d93b37420446a4378bf58ffec35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  updateFirstButton: 0
-  firstSelectedButton: {fileID: 9107577110121834538}
-  defaultSelectedButton: {fileID: 9107577110121834538}
-  buttons:
-  - {fileID: 9107577110121834538}
-  - {fileID: 9107577110247486833}
-  - {fileID: 9107577111096373900}
-  - {fileID: 9107577109520385621}
 --- !u!1 &3726369328675302588
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3726369329532762727}
+  - component: {fileID: 515703996636579478}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -661,6 +570,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515703996636579478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726369329532762724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f57d93b37420446a4378bf58ffec35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  updateFirstButton: 1
+  resetFirstButtonOnDisable: 1
+  firstSelectedButton: {fileID: 9107577110121834538}
+  defaultSelectedButton: {fileID: 9107577110121834538}
+  buttons:
+  - {fileID: 9107577110121834538}
+  - {fileID: 9107577110247486833}
+  - {fileID: 9107577111096373900}
+  - {fileID: 9107577109520385621}
 --- !u!1001 &3726369327519007734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,7 +614,7 @@ PrefabInstance:
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5490804057371653853}
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayAudioEventOneShot
@@ -702,7 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ButonClick
+      value: ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 7017820678389486038, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_UpdateMode
@@ -884,7 +815,7 @@ PrefabInstance:
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5490804057371653853}
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -907,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ButonClick
+      value: ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -1093,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5490804057371653853}
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayAudioEventOneShot
@@ -1116,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ButonClick
+      value: ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 7017820678389486038, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_UpdateMode
@@ -1306,7 +1237,7 @@ PrefabInstance:
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5490804057371653853}
+      objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1329,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: ButonClick
+      value: ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 5607584110924935546, guid: 6417d35da751fba48b2fe757164af0cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument

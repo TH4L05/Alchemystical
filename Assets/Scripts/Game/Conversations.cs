@@ -158,7 +158,7 @@ namespace Alchemystical
 
         public void CloseConversationUI()
         {
-            audioEventList.PlayAudioEventOneShot("ButtonClicked");
+            audioEventList.PlayAudioEventOneShot("ButtonClick");
             Game.Instance.gameTime.PauseGameTime(false);
             converstionUI.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);

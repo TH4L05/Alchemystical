@@ -85,7 +85,7 @@ namespace Alchemystical
             //EventSystem.current.enabled = false;
             if(activeImage) activeImage.gameObject.SetActive(true);
             //input.SetExtraInputActionsStatus(false);
-            input.SetUIInputActionsStatus(false);
+            //input.SetUIInputActionsStatus(false);
             input.SetUiOptionsInputActionsStatus(true);
 
         }
@@ -98,9 +98,10 @@ namespace Alchemystical
             deactivateEvent?.Invoke();
             //ChangeUIInputinfoOnjectsStatus(false);
             //EventSystem.current.enabled = true;
-            input.SetUIInputActionsStatus(true);
+            //input.SetUIInputActionsStatus(true);
             if (activeImage) activeImage.gameObject.SetActive(false);
             //rootSectionComponent.SelectButton();
+            input.SetUiOptionsInputActionsStatus(false);
         }
 
         public void ChangeStatus(bool active)
@@ -121,19 +122,6 @@ namespace Alchemystical
             rightButtonEvent?.Invoke();
             StartCoroutine(NextInputWait());
         }
-
-        /*public void ChangeUIInputinfoOnjectsStatus(bool active)
-        {
-            if (uiInputInfoObjects.Length < 1) return;
-
-            foreach (var obj in uiInputInfoObjects)
-            {
-                obj.SetActive(active);
-            }
-        }*/
-
-
-
     }
 }
 

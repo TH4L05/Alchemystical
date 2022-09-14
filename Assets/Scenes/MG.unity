@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 1624145773}
   defaultSelectedButton: {fileID: 1624145773}
   buttons:
@@ -4250,7 +4251,7 @@ RectTransform:
   - {fileID: 854944191}
   - {fileID: 1345721575}
   m_Father: {fileID: 1611589588}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4692,6 +4693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 1196147137}
   defaultSelectedButton: {fileID: 1196147137}
   buttons:
@@ -4808,6 +4810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 1542969255}
   defaultSelectedButton: {fileID: 1542969255}
   buttons:
@@ -5514,6 +5517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 1904143682}
   defaultSelectedButton: {fileID: 1904143682}
   buttons:
@@ -5573,6 +5577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 0
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 3459921325387274636}
   defaultSelectedButton: {fileID: 3459921325387274636}
   buttons:
@@ -5771,6 +5776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 946978738}
   defaultSelectedButton: {fileID: 946978738}
   buttons:
@@ -7048,6 +7054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 533767222}
   defaultSelectedButton: {fileID: 533767222}
   buttons:
@@ -7569,7 +7576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863807977970657870, guid: 343d67f9c837e1f499becb3083abc0a4, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3863807977970657870, guid: 343d67f9c837e1f499becb3083abc0a4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8149,6 +8156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 1853339182}
   defaultSelectedButton: {fileID: 1853339182}
   buttons:
@@ -10295,9 +10303,9 @@ RectTransform:
   - {fileID: 1524675512}
   - {fileID: 724834391}
   - {fileID: 1095559876}
+  - {fileID: 806707370}
   - {fileID: 543565775}
   - {fileID: 1305123789}
-  - {fileID: 806707370}
   - {fileID: 1172613174}
   - {fileID: 675523378}
   - {fileID: 506047419}
@@ -13042,6 +13050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   updateFirstButton: 1
+  resetFirstButtonOnDisable: 0
   firstSelectedButton: {fileID: 48120491}
   defaultSelectedButton: {fileID: 48120491}
   buttons:
@@ -15607,7 +15616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3726369328077279230, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3726369328077279230, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15693,10 +15702,26 @@ PrefabInstance:
       propertyPath: showPauseMenu
       value: 
       objectReference: {fileID: 1104063105}
+    - target: {fileID: 9107577109520385621, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 712894318}
+    - target: {fileID: 9107577110121834538, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 712894318}
+    - target: {fileID: 9107577110247486833, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 712894318}
     - target: {fileID: 9107577110247486833, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1305123788}
+    - target: {fileID: 9107577111096373900, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 712894318}
     - target: {fileID: 9107577111096373900, guid: 42c365f124c7a194c91385fde026fddc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

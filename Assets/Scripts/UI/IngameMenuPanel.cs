@@ -14,6 +14,7 @@ namespace Alchemystical
 
         [SerializeField] private bool active = true;
         [SerializeField] private bool updateFirstButton = true;
+        [SerializeField] private bool resetFirstButtonOnDisable = false;
         [SerializeField] private ButtonExtra firstSelectedButton;
         [SerializeField] private ButtonExtra defaultSelectedButton;
         [SerializeField] private List<ButtonExtra> buttons = new List<ButtonExtra>();
@@ -32,6 +33,8 @@ namespace Alchemystical
 
         private void OnDisable()
         {
+            if(!resetFirstButtonOnDisable) return;
+            ResetFirstSelectedButton();
         }
 
         public void ResetButtonTransitions()
@@ -73,8 +76,6 @@ namespace Alchemystical
 
         public void SelectButton()
         {
-            //if(!GameInput.SpeedLinkPhantomHawkJoystickConnected) return;
-            //EventSystem.current.SetSelectedGameObject(null);
             if (firstSelectedButton && active) StartCoroutine(SelectFirstButton());
         }
 
@@ -82,9 +83,9 @@ namespace Alchemystical
 
         IEnumerator SelectFirstButton()
         {
-            
+            EventSystem.current.SetSelectedGameObject(null);
             yield return new WaitForEndOfFrame();
-            //Debug.Log("First Button of Enabled Panel gets Selected");
+            Debug.Log("First Button of Enabled Panel gets Selected");
             firstSelectedButton.Select();
         }
     }
