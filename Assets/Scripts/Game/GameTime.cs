@@ -10,6 +10,7 @@ namespace Alchemystical
     {
         public static Action TraderAppeared;
         public static Action CustomerAppeared;
+        public static Action NewDayStarted;
 
         #region Fields
 
@@ -29,7 +30,7 @@ namespace Alchemystical
         [SerializeField] private string[] names = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
         [SerializeField] private float dayTimeStart = 6f;
         [SerializeField] private float dayTimeEnd = 18f;
-        [SerializeField] private CustomerInfoUI customerInfoUI;
+        //[SerializeField] private CustomerInfoUI customerInfoUI;
 
         private float internalMultiplier = 60f;
         private float daySeconds;
@@ -99,7 +100,7 @@ namespace Alchemystical
             if (dayseconds >= customerAppearanceTime)
             {
                 customerCanAppear = false;
-                Debug.Log("JeffAppearenceTime");
+                Debug.Log("CustomerAppearenceTime");
                 CustomerAppeared?.Invoke();
             }
         }
@@ -118,9 +119,7 @@ namespace Alchemystical
 
         private void StartDay()
         {
-            customerInfoUI.ResetCounter();
-            Game.Instance.questGiver.ClearWaitingList();
-            customerInfoUI.ChangeMerchantStatus(false);
+            NewDayStarted?.Invoke();
 
             daySeconds = dayTimeStart * 3600;
             currentSecond = daySeconds;

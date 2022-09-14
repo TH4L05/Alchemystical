@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -7,20 +8,35 @@ namespace Alchemystical
 {
     public class Inventory : MonoBehaviour
     {
+        #region SerializedFields
 
         [SerializeField] private List<InventorySlot> inventorySlots = new List<InventorySlot>();
         [SerializeField] private List<InventoryUISlot> inventoryUISlots = new List<InventoryUISlot>();
         [SerializeField] private GameObject inventoryUI;
         [SerializeField] private TextMeshProUGUI currencyTextField;
+
+        [Header("Oprions")]
+        [SerializeField] private int startGold = 500;
+        [SerializeField] private int ingredientStartValue = 10;
+
+        #endregion
+
+        #region PrivateFields
+
         private int gold;
         private int currentPage = 1;
         private int pageAmount;
         private Ingredient[] ingredients;
 
-        [SerializeField] private int startGold = 500;
-        [SerializeField] private int ingredientStartValue = 10;
+        #endregion
+
+        #region PublicFields
 
         public int Gold => gold;
+
+        #endregion
+
+        #region UnityFunctions
 
         private void Start()
         {
@@ -45,6 +61,10 @@ namespace Alchemystical
             }
         }
 
+        #endregion
+
+        #region Gold
+
         public void AddGold(int goldAmount)
         {
             Debug.Log("AddGold");
@@ -58,6 +78,10 @@ namespace Alchemystical
             gold -= goldAmount;
             UpdateUI();
         }
+
+        #endregion
+
+        #region Items
 
         public void AddItemAmount(Ingredient ingredient, int amount)
         {
@@ -87,6 +111,11 @@ namespace Alchemystical
             }
             UpdateUISlots();
         }
+
+
+        #endregion
+
+        #region UI
 
         private void UpdateUI()
         {
@@ -151,6 +180,10 @@ namespace Alchemystical
             }
         }
 
+        #endregion
+
+        #region GetValues
+
         public Ingredient GetInventorySlotIngredient(int index)
         {
             return inventorySlots[index].IngredientType;
@@ -168,5 +201,7 @@ namespace Alchemystical
                 uiSlot.SetButtonInteractable(interactable);
             }
         }
+
+        #endregion
     }
 }

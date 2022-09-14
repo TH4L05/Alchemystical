@@ -3,6 +3,9 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.EventSystems;
+using TK.Audio;
 
 namespace Alchemystical
 {
@@ -27,24 +30,32 @@ namespace Alchemystical
         [SerializeField] private TextMeshProUGUI conversationTextField;
 
         [SerializeField] private Trader trader;
-        [SerializeField] private QuestGiver questGiver;
+        [SerializeField] private OrderSystem questGiver;
+
+        [Header("Settings")]
+        [SerializeField] private AudioEventList audioEventList;
 
         private void Awake()
         {
-            QuestGiver.StartCustomerConversation += StartConversation;
+            OrderSystem.StartCustomerConversation += StartConversation;
+            OrderSystem.ExitConversation += CloseConversationUI;
             Trader.StartTraderConversation += StartConversation;
+            Trader.ExitConversation += CloseConversationUI;
+
         }
 
         private void OnDestroy()
         {
-            QuestGiver.StartCustomerConversation -= StartConversation;
+            OrderSystem.StartCustomerConversation -= StartConversation;
+            OrderSystem.ExitConversation -= CloseConversationUI;
             Trader.StartTraderConversation -= StartConversation;
+            Trader.ExitConversation -= CloseConversationUI;
         }
 
 
         private void StartConversation(Customer customer, ConversationType conversationType)
         {
-            CLoseConversationUI();
+            CloseConversationUI();
             Game.Instance.gameTime.PauseGameTime(true);
 
             switch (customer.customerType)
@@ -55,13 +66,13 @@ namespace Alchemystical
 
                 case CustomerType.Trader:
                     StartTraderConversation(customer, conversationType);
-
                     break;
 
 
                 case CustomerType.QuestGiver:
                     StartQuestGiverConversation(customer, conversationType);
                     break;
+
 
                 default:
                     break;
@@ -80,11 +91,12 @@ namespace Alchemystical
 
             conversationDeclineButtonTextField.text = "No thanks!";
             conversationDeclineButton.onClick.RemoveAllListeners();
-            conversationDeclineButton.onClick.AddListener(CLoseConversationUI);
+            conversationDeclineButton.onClick.AddListener(CloseConversationUI);
 
             customerImage.sprite = customer.customerSprite;
             conversationTextField.text = customer.conversationText;
             converstionUI.SetActive(true);
+            SelectButton(conversationAcceptButton);
         }
 
         private void StartQuestGiverConversation(Customer customer, ConversationType conversationType)
@@ -107,6 +119,7 @@ namespace Alchemystical
                     conversationDeclineButtonTextField.text = "Decline";
                     conversationDeclineButton.onClick.RemoveAllListeners();
                     conversationDeclineButton.onClick.AddListener(questGiver.DeclineQuest);
+                    SelectButton(conversationAcceptButton);
                     break;
 
 
@@ -119,6 +132,7 @@ namespace Alchemystical
                     conversationDeclineButton.onClick.RemoveAllListeners();
                     conversationOkButton.onClick.RemoveAllListeners();
                     conversationOkButton.onClick.AddListener(questGiver.RemoveQuest);
+                    SelectButton(conversationOkButton);
                     break;
 
 
@@ -128,6 +142,7 @@ namespace Alchemystical
                 default:
                     return;
             }
+
             customerImage.sprite = customer.customerSprite;
             conversationTextField.text = customer.conversationText;
             converstionUI.SetActive(true);
@@ -141,11 +156,25 @@ namespace Alchemystical
         //    conversationDeclineButton.gameObject.SetActive(true);
         //}
 
-        public void CLoseConversationUI()
+        public void CloseConversationUI()
         {
+            audioEventList.PlayAudioEventOneShot("ButtonClicked");
             Game.Instance.gameTime.PauseGameTime(false);
             converstionUI.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+
+        public void SelectButton(Button button)
+        {
+            if (!GameInput.SpeedLinkPhantomHawkJoystickConnected) return;
+            EventSystem.current.SetSelectedGameObject(null);
+            StartCoroutine(SelectFirstButton(button));
+        }
+
+        IEnumerator SelectFirstButton(Button button)
+        {           
+            yield return new WaitForEndOfFrame();
+            button.Select();
         }
     }
 }
-

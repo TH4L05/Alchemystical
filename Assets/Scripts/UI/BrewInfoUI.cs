@@ -15,6 +15,21 @@ namespace Alchemystical
         [SerializeField] private PlayableDirector playableDirector;
 
 
+        private void Start()
+        {
+            Brew.EffectAdded += UpdateInfo;
+            Brew.IngredientAdded += PlayDirector;
+            Brew.ResetBrewInfo += ResetAllEffectText;
+        }
+
+        private void OnDestroy()
+        {
+            Brew.EffectAdded -= UpdateInfo;
+            Brew.IngredientAdded -= PlayDirector;
+            Brew.ResetBrewInfo -= ResetAllEffectText;
+        }
+
+
         public void ChangeStatus(bool active)
         {
             if (infoContainer != null) infoContainer.SetActive(active);
@@ -53,6 +68,13 @@ namespace Alchemystical
         {
             if (ingredientImage != null) ingredientImage.sprite = ingredient.icon;
             if (playableDirector != null) playableDirector.Play();
+        }
+
+
+        private void UpdateInfo(int index, EffectType effectType)
+        {
+            SetEffectText(index, effectType.ToString());
+            ShowEffectText(index);
         }
     }
 }

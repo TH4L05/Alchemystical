@@ -1,29 +1,43 @@
+using TK.Audio;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Playables;
 
 namespace Alchemystical
 {
     public class IngredientBook : MonoBehaviour
     {
-        [SerializeField]
-        private Ingredient[] ingredients;
-        private Potion[] potions;
+        public UnityEvent ShowBookFullEvent;
+        public UnityEvent HideBookFullEvent;
 
-        [SerializeField] private GameObject nextPageButton;
-        [SerializeField] private GameObject previousPageButton;
 
-        private int currentPageIndex = 0;
+        [SerializeField] private ButtonExtra nextPageButton;
+        [SerializeField] private ButtonExtra previousPageButton;
         [SerializeField] private IngredientPage[] pages;
         [SerializeField] private IngredientPage[] worldBookpages;
+        [SerializeField] private IngameMenuPanel ingameMenuPanelRef;
 
-        [SerializeField] private PlayableDirector showFull;
-        [SerializeField] private PlayableDirector hideFull;
+
+        private Potion[] potions;
+        private int currentPageIndex = 0;
+        private bool showBook = false;
+
 
         private void Start()
         {
-            ingredients = Game.Instance.gameData.ingredients;
             potions = Game.Instance.gameData.potions;
-            Setup();
+            GameInput.ToggleBook += ToggleBook;
+            
+        }
+
+        private void OnEnable()
+        {
+            ShowPages(currentPageIndex);
+        }
+
+        private void OnDestroy()
+        {
+            GameInput.ToggleBook -= ToggleBook;
         }
 
         public void NextPage()
@@ -31,7 +45,7 @@ namespace Alchemystical
 
             currentPageIndex += 2;
             if (currentPageIndex > potions.Length -1) currentPageIndex = potions.Length - 1;
-            ShowPage(currentPageIndex);
+            ShowPages(currentPageIndex);
         }
 
         public void PreviousPage()
@@ -41,7 +55,7 @@ namespace Alchemystical
             {
                 currentPageIndex = 0;
             }
-            ShowPage(currentPageIndex);
+            ShowPages(currentPageIndex);
         }
 
         public void Close()
@@ -62,16 +76,21 @@ namespace Alchemystical
             worldBookpages[pageIndex].Show(potion);
         }
 
-        private void ShowPage(int index)
+        private void ShowPages(int index)
         {
-            nextPageButton.SetActive(true);
-            previousPageButton.SetActive(true);
+            nextPageButton.interactable = true;
+            previousPageButton.interactable = true;
         
             var currentIngredientType = potions[currentPageIndex];
             var secondIngredientType = potions[currentPageIndex];
             if (currentPageIndex +1 >= potions.Length)
             {
-                if (nextPageButton != null) nextPageButton.SetActive(false);
+                if (nextPageButton != null)
+                {
+                    nextPageButton.interactable = false;
+                    ingameMenuPanelRef.SetFirstSelectedButtonByIndex(1);
+                    ingameMenuPanelRef.SelectButton();
+                }
                 secondIngredientType = null;
             }
             else
@@ -84,24 +103,28 @@ namespace Alchemystical
 
             if (currentPageIndex == 0)
             {
-                if (previousPageButton != null) previousPageButton.SetActive(false);
+                if (previousPageButton != null)
+                {
+                    previousPageButton.interactable = false;
+                    ingameMenuPanelRef.SetFirstSelectedButtonByIndex(2);
+                    ingameMenuPanelRef.SelectButton();
+                }
+
             }
         }
 
-        public void Setup()
+        public void ToggleBook()
         {
-            ShowPage(currentPageIndex);
-        }
+            showBook = !showBook;
 
-        public void ShowInFull(bool show)
-        {
-            if (show)
+            if (showBook)
             {
-                if (showFull != null) showFull.Play();
+                ShowBookFullEvent?.Invoke();
+                
             }
             else
             {
-                if (hideFull != null) hideFull.Play();
+                HideBookFullEvent?.Invoke();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using TK.Audio;
 using UnityEngine;
 
 namespace Alchemystical
@@ -7,14 +8,18 @@ namespace Alchemystical
     public class Trader : MonoBehaviour
     {
         public static Action<Customer,ConversationType> StartTraderConversation;
+        public static Action<bool> ChangeTraderInfo;
+        public static Action ExitConversation;
 
         #region Fields
 
         [SerializeField] private Sprite traderSprite;
         [SerializeField] private string[] traderConversationTexts;
         [SerializeField] private GameObject traderShopUI;
-        [SerializeField] private CustomerInfoUI customerInfoUI;
         private Customer trader;
+
+        [Header("Settings")]
+        [SerializeField] private AudioEventList audioEventList;
 
         #endregion
 
@@ -36,20 +41,21 @@ namespace Alchemystical
         }
         private void ShowTrader()
         {
-            customerInfoUI.ChangeMerchantStatus(true);
+            ChangeTraderInfo?.Invoke(true);
         }
 
         public void ShowTraderShop()
         {
+            audioEventList.PlayAudioEventOneShot("ButtonClicked");
             traderShopUI.SetActive(true);
-            Game.Instance.conversations.CLoseConversationUI();
+            ExitConversation?.Invoke();
         }
 
         public void StartConversation()
         {
             trader.conversationText = SetConversationText();
             StartTraderConversation?.Invoke(trader, ConversationType.TraderConversation);
-            customerInfoUI.ChangeMerchantStatus(false);
+            ChangeTraderInfo?.Invoke(false);
         }
 
         private string SetConversationText()

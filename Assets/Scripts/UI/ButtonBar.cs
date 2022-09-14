@@ -39,9 +39,12 @@ namespace Alchemystical
             isActive = true;
             DisableAllPanels();
             DisableAllDecorations();
+
+            if(decorations.Count > 0) ActivateDecoration(lastDecorationIndex);
+
+            if (GameInput.SpeedLinkPhantomHawkJoystickConnected) return;
             if (!activateFirstPanelOnEnable) return;
             ActivatePanel(currentPanelIndex);
-            if(decorations.Count > 0) ActivateDecoration(lastDecorationIndex);
                  
         }
 

@@ -18,5 +18,5 @@ MonoBehaviour:
   brewColor: {r: 0.8867924, g: 0.17986828, b: 0.52470934, a: 0.5882353}
   clockwiseEffect: 0
   counterClockwiseEffect: 0
-  cwEffectUnlocked: 0
-  ccwEffectUnlocked: 0
+  cwEffectUnlocked: 1
+  ccwEffectUnlocked: 1

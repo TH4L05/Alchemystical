@@ -1,7 +1,9 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using TMPro;
 using TK.Audio;
@@ -12,7 +14,15 @@ namespace Alchemystical
     {
         #region Events
 
-        public static Action<Potion> APotionIsFinished;
+        public static Action<Potion> PotionIsBrewed;
+        public static Action<int,EffectType> EffectAdded;
+        public static Action<Ingredient> IngredientAdded;
+        public static Action ResetBrewInfo;
+        public static Action<bool> ChangeBrewInfoStatus;
+        public static Action<string> ShowInfoText;
+
+        public UnityEvent OnBrewModeActivate;
+        public UnityEvent OnBrewModeDeactivate;
 
         #endregion
 
@@ -29,10 +39,8 @@ namespace Alchemystical
         [SerializeField] private ParticleSystem smokeParticle;
         [SerializeField] private Color defaultBrewLiquidColor = Color.white;
         [SerializeField] private TextMeshProUGUI statusButtonTextField;
-        [SerializeField] private BrewInfoUI brewInfoUI;
 
         [Header("Settings")]
-        [SerializeField] private InputActionReference inputActionRef;
         [SerializeField] private float speed = 5f;
         [SerializeField] private float maxDistance = 1f;
         [SerializeField] private float splittingSize = 45;
@@ -79,56 +87,41 @@ namespace Alchemystical
         {
             laddleIdlePostion = laddle.transform.position;
             laddleIdleRotation = laddle.transform.rotation.eulerAngles;
-            inputActionRef.action.performed += Action_performed;
-            InventoryUISlot.AddIngredientFromSlot += AddIngredient;
         }
 
         private void Start()
         {
             ingredients = Game.Instance.gameData.ingredients;
+            InventoryUISlot.AddIngredientFromSlot += AddIngredient;
+            GameInput.ToggleBrewMode += ToggleBrewMode;
+            GameInput.MixInputValuesChanged += UpdateInputVector;
         }
 
         private void OnDestroy()
         {
-            inputActionRef.action.performed -= Action_performed;
             InventoryUISlot.AddIngredientFromSlot -= AddIngredient;
+            GameInput.ToggleBrewMode -= ToggleBrewMode;
+            GameInput.MixInputValuesChanged -= UpdateInputVector;
         }
 
         private void Update()
         {
-            //Test();
             BrewMovement();
-            Direction();
-        }
-
-        #endregion
-
-        #region Input
-
-        /*private void Test()
-        {
-            if (Keyboard.current.tabKey.wasPressedThisFrame)
-            {
-                ChangeBrewMode();
-            }
-        }*/
-
-        private void Action_performed(InputAction.CallbackContext callbackContext)
-        {
-            inputVector = callbackContext.ReadValue<Vector2>();
+            Direction();          
         }
 
         #endregion
 
         #region BrewStatus
 
-        public void ChangeBrewMode()
+        public void ToggleBrewMode()
         {
             onBrewMode = !onBrewMode;
-            BrewStart(onBrewMode);
+            audioEventList.PlayAudioEventOneShot("ButtonClick");
+            ChangeBrewMode(onBrewMode);
         }
 
-        private void BrewStart(bool active)
+        private void ChangeBrewMode(bool active)
         {
             if (laddle == null) throw new ArgumentNullException("Laddle Object Ref is Missing");
             if (brewLiquid == null) throw new ArgumentNullException("BrewLiquid Object Ref is Missing");
@@ -139,6 +132,7 @@ namespace Alchemystical
                 if (activated) return;
 
                 activated = active;
+
                 effectCounter = 0;
                 //clockWiseFinished = 0;
                 //counterClockWiseFinished = 0;
@@ -148,20 +142,24 @@ namespace Alchemystical
                 ResetBrewColors();
                 canAddIngredient = true;
 
-                if(statusButtonTextField != null) statusButtonTextField.text = "Deactivate Brewmode";
-                if (brewInfoUI != null) brewInfoUI.ChangeStatus(true);
+                if (statusButtonTextField != null) statusButtonTextField.text = "Deactivate Brewmode";
+                ChangeBrewInfoStatus?.Invoke(active);
+                OnBrewModeActivate?.Invoke();
+
+                Game.Instance.input.SetBrewInputActionsStatus(true);
                 Game.Instance.inventory.ChangeInvewntoryUIObjectStatus(true);
                 Game.Instance.inventory.ChangeInventoryUISlotButtonInteractability(true);
-                inputActionRef.action.Enable();
             }
             else
             {
                 if (!activated) return;
 
                 activated = active;
-                inputActionRef.action.Disable();
+
+                Game.Instance.input.SetBrewInputActionsStatus(false);
                 Game.Instance.inventory.ChangeInventoryUISlotButtonInteractability(false);
                 Game.Instance.inventory.ChangeInvewntoryUIObjectStatus(false);
+
                 canAddIngredient = false;
                 effectCounter = 0;
                 //clockWiseFinished = 0;
@@ -170,15 +168,17 @@ namespace Alchemystical
                 laddle.transform.rotation = Quaternion.Euler(laddleIdleRotation);
                 DestroyPotion();
                 ResetBrewColors();
+                ChangeBrewInfoStatus?.Invoke(active);
+                OnBrewModeDeactivate?.Invoke();
 
                 if (statusButtonTextField != null) statusButtonTextField.text = "Activate Brewmode";
-                if (brewInfoUI != null) brewInfoUI.ChangeStatus(false);
             }
         }
 
         #endregion
 
         #region Brew
+
         private static float Angle(Vector3 vec)
         {
             if (vec.x < 0)
@@ -191,10 +191,16 @@ namespace Alchemystical
             }
         }
 
+        private void UpdateInputVector(Vector2 input)
+        {
+            inputVector = input;
+        }
+
         private void BrewMovement()
         {
             if (!onBrewMode) return;
 
+            
             if (inputVector != Vector2.zero)
             {
                 x += inputVector.y * speed * Time.deltaTime;
@@ -344,7 +350,7 @@ namespace Alchemystical
             potion.name = "UnknownPotion";
             potion.potionName = "UnknownPotion";
             potion.lockedEffects = false;
-            brewInfoUI.ResetAllEffectText();
+            ResetBrewInfo?.Invoke();
         }
 
         public void ResetPotion()
@@ -358,7 +364,7 @@ namespace Alchemystical
             if (potion != null) DestroyImmediate(potion);
             potion = null;
             ResetBrewColors();
-            brewInfoUI.ResetAllEffectText();
+            ResetBrewInfo?.Invoke();
             canAddIngredient = true;
             effectCounter = 0;
         }
@@ -409,12 +415,9 @@ namespace Alchemystical
 
             audioEventList.PlayAudioEventOneShot("PotionAddEffect");
             string text = "Add Effect ->" + effectType.ToString();
-            Game.Instance.InfoUIText.SetText(text);
-            Game.Instance.InfoUIText.PlayDirector();
-
-            brewInfoUI.SetEffectText(effectCounter, effectType.ToString());
-            brewInfoUI.ShowEffectText(effectCounter);
-                      
+            ShowInfoText?.Invoke(text);
+            EffectAdded?.Invoke(effectCounter, effectType);
+                     
             canAddIngredient = true;
             currentIngredient = null;
                          
@@ -428,12 +431,6 @@ namespace Alchemystical
         private void PotionFinished()
         {
             CheckPotion(potion);
-            //APotionIsFinished?.Invoke(potion);
-            //onBrewMode = false;
-            //BrewStart(onBrewMode);
-            //string text =  "New Potion brewed";
-            //Game.Instance.InfoUIText.SetText(text);
-            //Game.Instance.InfoUIText.PlayDirector();
         }
 
         private void CheckPotion(Potion brewedPotion)
@@ -488,8 +485,7 @@ namespace Alchemystical
         {
 
             string text = potion.potionName;
-            Game.Instance.InfoUIText.SetText(text);
-            Game.Instance.InfoUIText.PlayDirector();
+            ShowInfoText?.Invoke(text);
 
             if (potion.potionName == "UnknownPotion")
             {
@@ -502,18 +498,12 @@ namespace Alchemystical
             finishedPotion.potionName = potion.potionName;
             finishedPotion.potionPicture = potion.potionPicture;
 
-            APotionIsFinished?.Invoke(finishedPotion);
+            PotionIsBrewed?.Invoke(finishedPotion);
             audioEventList.PlayAudioEventOneShot("PotionBrewed");          
             ResetPotion();
         }
 
         #endregion
-
-        IEnumerator WaitForReset()
-        {
-            yield return new WaitForSeconds(1f);
-            ResetPotion();
-        }
 
         #region Ingredient
 
@@ -529,7 +519,7 @@ namespace Alchemystical
             SetBrewColors(currentIngredient.brewColor);
             Game.Instance.inventory.RemoveItemAmount(currentIngredient, 1);
             audioEventList.PlayAudioEventOneShot("AddIngredient");
-            brewInfoUI.PlayDirector(currentIngredient);
+            IngredientAdded?.Invoke(currentIngredient);
         }
 
         #endregion

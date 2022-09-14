@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TK.Audio.AudioEvent">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AudioEventList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TK.Audio.AudioEventList">
+    <Position X="10.5" Y="3.5" Width="2.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.213" />
+        <Point X="11.875" Y="2.213" />
+        <Point X="11.875" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAgCAAAAAAAAAAAhAAAQAEIAAAAAABhA=</HashCode>
+      <FileName>Assets\Scripts\AudioEventList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Brew">
+    <Position X="24.5" Y="19.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAwRAQARJOgCoCAAIjAAQhBBhECgIbB2imRgSUBAIEA=</HashCode>
+      <FileName>Assets\Scripts\Game\Brew.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Conversations">
+    <Position X="16.5" Y="19.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BQABCAAAAgCABAFAAAAAAAAAQgAAAAAUAAgCAAFAAEA=</HashCode>
+      <FileName>Assets\Scripts\Game\Conversations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Game">
+    <Position X="40.5" Y="3.75" Width="1.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.231" />
+        <Point X="41.438" Y="2.231" />
+        <Point X="41.438" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEABAAAAACAAABgAAAAAAQAAAAAAABACQAAAAAAAANA=</HashCode>
+      <FileName>Assets\Scripts\Game\Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alchemystical.GameData">
+    <Position X="43.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Game\GameData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.GameTime">
+    <Position X="35.5" Y="3.75" Width="2" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.205" />
+        <Point X="36.5" Y="2.205" />
+        <Point X="36.5" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>sAwUAJEESWFEUgwQFAAAAICgAgAAEAIABRACAICAEMI=</HashCode>
+      <FileName>Assets\Scripts\Game\GameTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Ingredient">
+    <Position X="50.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgAAgAAAAACAABAAAAAAAAAQQAgQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Ingredients\Ingredient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.GameInput">
+    <Position X="1.5" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EkBhCBJIhGAAOgQAASQgAGSUGEAAIKoIACQSACkIIEA=</HashCode>
+      <FileName>Assets\Scripts\Input\GameInput.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="controls" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alchemystical.Inventory">
+    <Position X="17.25" Y="10" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAaAQAJCGgAAgAAIgEgAAAAAAAAAAAgAQqAggAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Inventory\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.InventoryInfo">
+    <Position X="24.75" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\InventoryInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.InventorySlot">
+    <Position X="20.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAAAQAAAAAAAAAAAAAAAAIAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\InventorySlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.InventoryUISlot" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="10" Width="2" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="9.135" />
+        <Point X="23.5" Y="9.135" />
+        <Point X="23.5" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACCAAAACAwIAAAACAAAAAAACAAgAIAABAEAAQABAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory\InventoryUISlot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Alchemystical.Customer">
+    <Position X="16.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAAAAACAAAAAAAQAAAAAQAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quest\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.OrderSystem">
+    <Position X="7" Y="19.25" Width="2.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="19.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABABgQlwkDEAGIATCgAYBAEQAYAABCAoIAACQAAOAqA=</HashCode>
+      <FileName>Assets\Scripts\Quest\OrderSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Offer">
+    <Position X="14.25" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAIQAgAAAAAAABAAAAAAqQAIACAACAAABAAAAQAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Trader\Offer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Trader">
+    <Position X="10.25" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CBABAAAgACCAAAAAAAAABAAAAgQCAABgCAACAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Trader\Trader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.TraderShop">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAIAAAAAAAAAAsAAAAAAAAFAAAAAIAAAAgAAACEA=</HashCode>
+      <FileName>Assets\Scripts\Trader\TraderShop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.IngredientBook">
+    <Position X="29" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABSAAAASEAAABgACAAAAAAEgAEAAAAAAAAgQSCCAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Book\IngredientBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.IngredientPage">
+    <Position X="31" Y="10" Width="1.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="9.116" />
+        <Point X="31.75" Y="9.116" />
+        <Point X="31.75" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAAAAAAAAAAAEAgQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Book\IngredientPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.BrewInfoUI">
+    <Position X="26.75" Y="19.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAAAGAAEEAAAAAAAAAAAQQAIAAAAAAAAAChAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\BrewInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.ButtonBar">
+    <Position X="17" Y="34.5" Width="2.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.625" />
+        <Point X="6.028" Y="18.625" />
+        <Point X="6.028" Y="33.625" />
+        <Point X="18.25" Y="33.625" />
+        <Point X="18.25" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASACAAAAAAAEADAAAACCAACQAgAACQAECAQ=</HashCode>
+      <FileName>Assets\Scripts\UI\ButtonBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.IngameMenuPanel">
+    <Position X="10" Y="34.5" Width="2.25" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.625" />
+        <Point X="6.028" Y="18.625" />
+        <Point X="6.028" Y="33.625" />
+        <Point X="11.125" Y="33.625" />
+        <Point X="11.125" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>FAAABAAAAAAAAAEAIQAQAAAEAAAAAIAIAAAAIIAASAA=</HashCode>
+      <FileName>Assets\Scripts\UI\IngameMenuPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.MainMenu">
+    <Position X="4.25" Y="34.5" Width="2" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.599" />
+        <Point X="6.042" Y="18.599" />
+        <Point X="6.042" Y="33.657" />
+        <Point X="5.25" Y="33.657" />
+        <Point X="5.25" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAIACABAAAAAAAAAIAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Options">
+    <Position X="38" Y="3.75" Width="2.25" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.231" />
+        <Point X="39.062" Y="2.231" />
+        <Point X="39.062" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="data" Type="Alchemystical.SettingsData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="39.188" Y="17.165" />
+        <Point X="39.188" Y="17.54" />
+        <Point X="47" Y="17.54" />
+        <Point X="47" Y="13.001" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BDCGgICEGEESgAhgSAQHgEiEFACAUABARKAwAGaAANQ=</HashCode>
+      <FileName>Assets\Scripts\UI\Options.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alchemystical.OptionsSection">
+    <Position X="12.75" Y="34.5" Width="2" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.625" />
+        <Point X="6.001" Y="18.625" />
+        <Point X="6.001" Y="33.625" />
+        <Point X="13.75" Y="33.625" />
+        <Point X="13.75" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OptionsSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.OptionsSubsection">
+    <Position X="15" Y="34.5" Width="1.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.651" />
+        <Point X="6.013" Y="18.651" />
+        <Point X="6.013" Y="33.625" />
+        <Point X="15.875" Y="33.625" />
+        <Point X="15.875" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAAEhQAAAAIBAIAAQAABAAAAAAgCAlCIA=</HashCode>
+      <FileName>Assets\Scripts\UI\OptionsSubsection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.OrderInfoUI">
+    <Position X="9.75" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAgAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OrderInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.OrderUIInfoSlot">
+    <Position X="11.5" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACBAAAAAAAAACAAAAAACAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OrderUIInfoSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.QuestUISlot">
+    <Position X="13.25" Y="19.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAABAAAAABAAACAAAAAAAARAAIAEYAAAAAABAgA=</HashCode>
+      <FileName>Assets\Scripts\UI\QuestUISlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.Serialization">
+    <Position X="25" Y="3.75" Width="2" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.231" />
+        <Point X="26" Y="2.231" />
+        <Point X="26" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAQAAAAAAAAAAAAAAEAAAAIAAAEEACAAEAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Serialization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alchemystical.SettingsData">
+    <Position X="45.75" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IiAAAgMGAADAAg4JQAAOAEgAAMAEgYAAYAAgAOACAAo=</HashCode>
+      <FileName>Assets\Scripts\UI\SettingsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadScene">
+    <Position X="27.5" Y="3.75" Width="2.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.213" />
+        <Point X="28.75" Y="2.213" />
+        <Point X="28.75" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAQoAQAAAAAIAACAAAAgAAIAAAABQAAAAAgEA=</HashCode>
+      <FileName>Assets\Scripts\Game\LoadScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="@Controls" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAFCDAAAACACABlCgAIAGTgBYABXIGgUAApkIDBUBIA=</HashCode>
+      <FileName>Assets\Scripts\Input\Controls.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenUrl">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="2.195" />
+        <Point X="18.5" Y="2.195" />
+        <Point X="18.5" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQIAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\OpenUrl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Potion">
+    <Position X="48.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACAAAQAIAAAAAAAEAAAAAAAEAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Quest\Potion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonExtension" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="34.5" Width="1.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.625" />
+        <Point X="6.029" Y="18.625" />
+        <Point X="6.029" Y="33.625" />
+        <Point X="20.625" Y="33.625" />
+        <Point X="20.625" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAEAAAAAAAAAABAAAAAAQgAAAAAAAAAQAAICA=</HashCode>
+      <FileName>Assets\Scripts\UI\ButtonExtension.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ButtonExtra">
+    <Position X="21.75" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAIgAAAAAAAAAQAAIAA=</HashCode>
+      <FileName>Assets\Scripts\UI\ButtonExtra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInfoUI">
+    <Position X="19.5" Y="19.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gACBAAgBACAIkEAAAOQEAAAAAAAACAEEAAAAAAAAQAQ=</HashCode>
+      <FileName>Assets\Scripts\UI\CustomerInfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfoUIText">
+    <Position X="30.5" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAADAACAAAAAAAIAAAAAAAAAAIAAAAAAAAACAAIA=</HashCode>
+      <FileName>Assets\Scripts\UI\InfoUIText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IngameMenu">
+    <Position X="7" Y="34.5" Width="2.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.625" />
+        <Point X="6.046" Y="18.625" />
+        <Point X="6.046" Y="33.625" />
+        <Point X="8.375" Y="33.625" />
+        <Point X="8.375" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CABgAgBAgAAAACAAAAAAgAAAEAAAAAAAAAAAAAgQAUA=</HashCode>
+      <FileName>Assets\Scripts\UI\IngameMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Behaviour" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Component" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ScriptableObject" Collapsed="true">
+    <Position X="46.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Alchemystical.UnsupportedJoystick">
+    <Position X="2.25" Y="34.5" Width="1.75" />
+    <InheritanceLine Type="UnityEngine.MonoBehaviour" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="1.191" />
+        <Point X="8.5" Y="18.651" />
+        <Point X="6.002" Y="18.651" />
+        <Point X="6.002" Y="33.618" />
+        <Point X="3.125" Y="33.618" />
+        <Point X="3.125" Y="34.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\UnsupportedJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Alchemystical.ConversationType">
+    <Position X="20.25" Y="24.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAIAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Game\Conversations.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Alchemystical.CustomerType">
+    <Position X="18.5" Y="24.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAQAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Quest\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EffectType">
+    <Position X="50" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAEAgBAAAAAAQAAAAIAYAEAABAAJAQBAACSAIAgDA=</HashCode>
+      <FileName>Assets\Scripts\Ingredients\Effects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

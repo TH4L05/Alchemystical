@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,14 +12,11 @@ namespace Alchemystical
 
         public GameData gameData;
         public Inventory inventory;
-        public QuestGiver questGiver;
-        public Trader trader;
-        public TraderShop traderShop;
         public GameTime gameTime;
-        public Conversations conversations;
-        public InfoUITexT InfoUIText;
         public IngameMenu ingameMenu;
         public Options options;
+        public GameInput input;
+        public bool isMenu;
 
         private void Awake()
         {
@@ -28,13 +26,24 @@ namespace Alchemystical
             Time.timeScale = 1f;
         }
 
-        private void Update()
+        private void Start()
         {
-            IncreseMoneyDebug();
-            OpenPauseMenu();
+            GameInput.ToggleMenu += TogglePauseMenu;
         }
 
-        private void IncreseMoneyDebug()
+        private void OnDestroy()
+        {
+            GameInput.ToggleMenu -= TogglePauseMenu;
+        }
+
+        /*private void Update()
+        {
+            //if(isMenu) return;
+            //IncreseMoney();
+            
+        }*/
+
+        private void IncreaseMoneyTEST()
         {
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
@@ -42,13 +51,16 @@ namespace Alchemystical
             }
         }
 
-        private void OpenPauseMenu()
+        private void TogglePauseMenu()
         {
-            if (IngameMenu.GamePaused) return;
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            if (IngameMenu.GamePaused)
+            {
+                ingameMenu.Resume();
+            }
+            else
             {
                 ingameMenu.Pause();
-            }
+            }         
         }
     }
 }

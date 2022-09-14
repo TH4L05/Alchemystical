@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class ButtonExtension : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonExtension : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler ,ISelectHandler, IDeselectHandler
 {
     public UnityEvent OnHoverEnter;
     public UnityEvent OnHoverExit;
@@ -21,6 +21,7 @@ public class ButtonExtension : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
     public void OnSelect(BaseEventData eventData)
     {
+        
         OnButtonSelect?.Invoke();
     }
     public void OnDeselect(BaseEventData eventData)

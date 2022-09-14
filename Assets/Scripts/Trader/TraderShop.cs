@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Alchemystical
 {
     public class TraderShop : MonoBehaviour
     {
-        public int currency;
+        public UnityEvent OnShopEnabled;
+        public UnityEvent OnShopDisabled;
+
         [SerializeField] private Ingredient[] ingredients;
         [SerializeField] private List<Offer> offers = new List<Offer>();
         [SerializeField, Range(0, 99)] private int maxOfferSize = 50;
@@ -20,12 +23,14 @@ namespace Alchemystical
             ingredients = Game.Instance.gameData.ingredients;
             UpdateOffers();
             Game.Instance.inventory.ChangeInvewntoryUIObjectStatus(true);
+            OnShopEnabled?.Invoke();
         }
 
         private void OnDisable()
         {
             if (Brew.onBrewMode) return;
             Game.Instance.inventory.ChangeInvewntoryUIObjectStatus(false);
+            OnShopDisabled?.Invoke();
         }
 
         public void UpdateOffers()

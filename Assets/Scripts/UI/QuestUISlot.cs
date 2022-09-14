@@ -13,7 +13,6 @@ namespace Alchemystical
 
         [SerializeField] private Image slotImage;
         [SerializeField] private TextMeshProUGUI slotTextField;
-        [SerializeField] private Button slotButton;
         private Customer customer;
         private bool questDone;
 
@@ -42,14 +41,15 @@ namespace Alchemystical
 
         public void Destroy()
         {
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.25f);
         }
 
         public void ButtonClicked()
         {
+            Debug.Log("QuestButtonClicked");
             if (!questDone) return;
             QuestbuttonClicked?.Invoke(customer);
-            Destroy();
+            //Destroy();
         }
 
         public void SetQuestDone(Color color)

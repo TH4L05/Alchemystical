@@ -203,7 +203,25 @@ namespace Alchemystical
 
         public void ChangeMasterVolume(float volumeValue)
         {
+
             data.SetMasterVolume(volumeValue);
+            SetMasterVolume();
+        }
+
+        public void ChangeMasterVolumeStick(float volumeValue)
+        {
+            masterVolume += volumeValue;
+            if (masterVolume < 0)
+            {
+                masterVolume = 0;
+            }
+
+            if (masterVolume > masterVolumeMaxValue)
+            {
+                masterVolume = masterVolumeMaxValue;
+            }
+
+            data.SetMasterVolume(masterVolume);
             SetMasterVolume();
         }
 
@@ -213,9 +231,43 @@ namespace Alchemystical
             SetMusicVolume();
         }
 
+        public void ChangeMusicVolumeStick(float volumeValue)
+        {
+            musicVolume += volumeValue;
+            if (musicVolume < 0)
+            {
+                musicVolume = 0;
+            }
+
+            if (musicVolume > musicVolumeMaxValue)
+            {
+                musicVolume = musicVolumeMaxValue;
+            }
+
+            data.SetMusicVolume(musicVolume);
+            SetMusicVolume();
+        }
+
         public void ChangeSFXVolume(float volumeValue)
         {
             data.SetSFXVolume(volumeValue);
+            SetSFXVolume();
+        }
+
+        public void ChangeSFXVolumeStick(float volumeValue)
+        {
+            sfxVolume += volumeValue;
+            if (sfxVolume < 0)
+            {
+                sfxVolume = 0;
+            }
+
+            if (sfxVolume > sfxVolumeMaxValue)
+            {
+                sfxVolume = sfxVolumeMaxValue;
+            }
+
+            data.SetSFXVolume(sfxVolume);
             SetSFXVolume();
         }
 
@@ -339,32 +391,29 @@ namespace Alchemystical
 
         public void SetMasterVolume()
         {
-            var volume = data.MasterVolume;
-            masterVolume = volume;
-            if (masterVolumeSlider) masterVolumeSlider.value = volume;
-            if (masterVolumeSliderText) masterVolumeSliderText.text = volume.ToString("000");
-            masterBus.setVolume(volume / masterVolumeMaxValue);
+            masterVolume = data.MasterVolume;
+            if (masterVolumeSlider) masterVolumeSlider.value = masterVolume;
+            if (masterVolumeSliderText) masterVolumeSliderText.text = masterVolume.ToString("000");
+            masterBus.setVolume(masterVolume / masterVolumeMaxValue);
         }
 
         public void SetMusicVolume()
         {
-            var volume = data.MusicVolume;
-            musicVolume = volume;
-            if (musicVolumeSlider) musicVolumeSlider.value = volume;
-            if (musicVolumeSliderText) musicVolumeSliderText.text = volume.ToString("000");
+            musicVolume = data.MusicVolume;
+            if (musicVolumeSlider) musicVolumeSlider.value = musicVolume;
+            if (musicVolumeSliderText) musicVolumeSliderText.text = musicVolume.ToString("000");
 
-            musicBus.setVolume(volume / musicVolumeMaxValue);
+            musicBus.setVolume(musicVolume / musicVolumeMaxValue);
             //volume -= 80;
             //audioMixer.SetFloat("MusicVolume", volume);
         }
 
         public void SetSFXVolume()
         {
-            var volume = data.SfxVolume;
-            sfxVolume = volume;
-            if (sfxVolumeSlider) sfxVolumeSlider.value = volume;
-            if (sfxVolumeSliderText) sfxVolumeSliderText.text = volume.ToString("000");
-            sfxBus.setVolume(volume / sfxVolumeMaxValue);
+            sfxVolume = data.SfxVolume;
+            if (sfxVolumeSlider) sfxVolumeSlider.value = sfxVolume;
+            if (sfxVolumeSliderText) sfxVolumeSliderText.text = sfxVolume.ToString("000");
+            sfxBus.setVolume(sfxVolume / sfxVolumeMaxValue);
             //volume -= 80;
             //audioMixer.SetFloat("SFXVolume", volume);
         }

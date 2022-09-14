@@ -1,17 +1,23 @@
 /// <author>Thoams Krahl</author>
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace PelagosProject.UI.Menu.Ingame
+namespace Alchemystical
 {
     public class IngameMenuPanel : MonoBehaviour
     {
         #region Fields
 
         [SerializeField] private bool active = true;
-        [SerializeField] private Button firstSelectedButton;
+        [SerializeField] private bool updateFirstButton = true;
+        [SerializeField] private ButtonExtra firstSelectedButton;
+        [SerializeField] private ButtonExtra defaultSelectedButton;
+        [SerializeField] private List<ButtonExtra> buttons = new List<ButtonExtra>();
+        
 
         #endregion
 
@@ -19,16 +25,56 @@ namespace PelagosProject.UI.Menu.Ingame
 
         private void OnEnable()
         {
+            if(firstSelectedButton == null) firstSelectedButton = defaultSelectedButton;
+            ResetButtonTransitions();
             SelectButton();
         }
 
         private void OnDisable()
         {
-            
+        }
+
+        public void ResetButtonTransitions()
+        {
+            foreach (var button in buttons)
+            {
+                button.ResetTransition();
+            }
+        }
+
+        public void AddButton(ButtonExtra button)
+        {
+            buttons.Add(button);
+        }
+
+        public void RemoveButton(ButtonExtra button)
+        {
+            buttons.Remove(button);
+        }
+
+        public void SetFirstSelectedButtonByIndex(int index)
+        {
+            if (index < 0) return;
+            if(index > buttons.Count) return;
+            firstSelectedButton = buttons[index];
+        }
+
+        public void ResetFirstSelectedButton()
+        {
+            firstSelectedButton = defaultSelectedButton;
+        }
+
+        public void SetSelectedButton()
+        {
+            if(!updateFirstButton) return;
+            var selectedObj = EventSystem.current.currentSelectedGameObject;
+            selectedObj.TryGetComponent(out firstSelectedButton);
         }
 
         public void SelectButton()
         {
+            //if(!GameInput.SpeedLinkPhantomHawkJoystickConnected) return;
+            //EventSystem.current.SetSelectedGameObject(null);
             if (firstSelectedButton && active) StartCoroutine(SelectFirstButton());
         }
 
@@ -36,8 +82,9 @@ namespace PelagosProject.UI.Menu.Ingame
 
         IEnumerator SelectFirstButton()
         {
+            
             yield return new WaitForEndOfFrame();
-            Debug.Log("First Button of Enabled Panel gets Selected");
+            //Debug.Log("First Button of Enabled Panel gets Selected");
             firstSelectedButton.Select();
         }
     }
